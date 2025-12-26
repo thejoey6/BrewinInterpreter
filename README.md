@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Starter
 
 This repository provides:
@@ -43,3 +44,7 @@ This is an unlicensed repository; even though the source code is public, it is *
 This code was primarily written by [Carey Nachenberg](http://careynachenberg.weebly.com/) with support from his TAs.
 
 
+=======
+# BrewinInterpreter
+Python-made mock language interpreter for class project
+>>>>>>> e4e8798d8b91a6c0ac63f369a70ed6e125642f5e
