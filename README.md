@@ -26,12 +26,6 @@ intbase.py
 - You do NOT need to understand these files to do the project (other than knowing how to invoke certain methods defined in them, which is outlined in the spec)
 - You should NOT modify these files under any circumstance
 
-## Local Autograder
-
-To test your solution against the local autograder (again, this is 20% of the total Gradescope test cases), simply run:
-```
-python tester.py <project number>
-```
 
 This will run all the `tests` and `fails` tests in directory `v<project number>` against your interpreter.
 
@@ -43,8 +37,3 @@ This is an unlicensed repository; even though the source code is public, it is *
 
 This code was primarily written by [Carey Nachenberg](http://careynachenberg.weebly.com/) with support from his TAs.
 
-
-=======
-# BrewinInterpreter
-Python-made mock language interpreter for class project
->>>>>>> e4e8798d8b91a6c0ac63f369a70ed6e125642f5e
