@@ -1,9 +1,0 @@
-def main() {
-  print("foo");  
-}
-
-/*
-*OUT*
-foo
-*OUT*
-*/
