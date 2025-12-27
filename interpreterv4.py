@@ -1,3 +1,5 @@
+# My Code
+
 from intbase import InterpreterBase
 from intbase import ErrorType
 import copy
@@ -120,7 +122,7 @@ class Interpreter(InterpreterBase):
                 else:
                     exp = self.evaluate_expression(statement.get('expression'), env)
 
-                ret = env.assign(var, exp, self)      # NOTE: This is how to properly propagate return errors
+                ret = env.assign(var, exp, self)      # This is how to properly propagate return errors
 
                 if isinstance(ret, ErrorType):
                     super().error(ret, f"Error assigning {exp} to {var}, probably already declared or incompatible.")
@@ -253,8 +255,6 @@ class Interpreter(InterpreterBase):
         if (cond != True and cond != False) and (cond != 'true' and cond != 'false'):
             return super().error(ErrorType.TYPE_ERROR, "Condition does not evaluate to a boolean",)
         
-     #   block = Environment(env)
-
         while(self.evaluate_expression(condition, env) == True):
             block = Environment(env)
             if stmnts:
