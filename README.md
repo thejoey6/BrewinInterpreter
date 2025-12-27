@@ -1,39 +1,91 @@
-<<<<<<< HEAD
-# Project Starter
+# Brewin Interpreter (Python)
 
-This repository provides:
-1. The necessary environment to run your interpreter solution inside of
-2. A local autograder script supplied with 20% of the Gradescope test cases for you to test your program
+A **full interpreter for *Brewin***, a statically-typed, object-oriented mock language with interfaces, first-class functions, lambdas/closures, and method dispatch. 
 
-## Notes
+Built in **Python** as a quarter-long university project focused on language implementation and runtime systems.
 
-- To do the project, you must have a top-level, versioned interpretervX.py file (where X is the current project number) that exports the Interpreter class. If not, your code will not run on our autograder.
-- Your Gradescope submission should contain `interpretervX.py` and optionally any additional files YOU wrote (not the base files) that it rely on to run.
-- You should maintain a copy of your local git history and commit to it regularly as you work. Although this is not required for submission, we reserve the right to ask you to submit this at any time if we suspect foul play.
-- A few days after each project deadline, we will upload a reference solution to THIS repository. We recommend you do the next part building on your own code, but you are free to build on the reference solution from the previous project if you wish.
-- You will be graded using Python 3.11. Use Python 3.12 if you want to use the plotting feature.
+This interpreter parses, type-checks, and executes Brewin programs according to a formal specification, handling non-trivial scoping, interface compliance, and runtime error semantics.
 
-### For These Files:
+---
+
+## Scope of Concepts
+
+This project goes beyond basic scripting or application code and focuses on **core programming language concepts**, including:
+
+- Abstract syntax tree (AST) evaluation
+- Lexical scoping and closures
+- Structural interface typing
+- Function values and higher-order programming
+- Object methods with implicit receivers
+- Precise runtime error detection
+
+
+---
+
+## Supported Language Features
+
+### Core
+- Name-suffix static typing (`i`, `s`, `b`, `o`, `f`, `v`)
+- Function overloading by parameter type
+- Pass-by-value and pass-by-reference semantics
+- Block-scoped shadowing and lexical scoping
+- Explicit runtime error handling
+
+### Brewin Extensions
+- **Structural interfaces**
+- **First-class functions**
+- **Lambda expressions and closures**
+- **Objects with variable and function members**
+- **Method calls with implicit `selfo`**
+- **Interface-typed variables and returns**
+- **Function equality semantics**
+
+---
+
+## Project Structure
+
+The files ***interpreterv4.py***, ***function.py***, ***environment.py***, and ***nil_module.py*** are my own code. I did not write the code in any other files, they were provided by the instructor.
+
+This project consisted of four parts, each building upon or revising the last. As such, code organization is influenced by chronology and can be hard to navigate.
+ 
+---
+
+## Running the Interpreter
+The program, as is, contains a sample excerpt of *Brewin* code which can be found at the bottom of `interpreterv4.py` and is automatically executed (i.e., interpreted) when the program runs. 
+
+The last line of this file executes `Interpreter.run()`, which takes a single string variable of syntactically-valid *Brewin* code as its arguments. One can create a new variable to test different features of the language, as well as some of its shortcomings.
+
+##### Python 3.11 recommended
+
+---
+
+ ## Example Brewin Program
+
 ```
-ply/lex.py
-ply/yacc.py
-brewlex.py
-brewparse.py
-element.py
-intbase.py
+interface A {
+  vali;
+  addf(i);
+}
+
+def addi(xi) { return xi + 1; }
+
+def main() {
+  var o;
+  o = @;
+  o.vali = 10;
+  o.addf = addi;
+
+  var xA;
+  xA = o;           /* interface compliance checked here */
+  print(xA.addf(5)); /* 6 */
+}
 ```
+---
 
-- You do NOT need to understand these files to do the project (other than knowing how to invoke certain methods defined in them, which is outlined in the spec)
-- You should NOT modify these files under any circumstance
+## Academic Context
 
+This repository is coursework and is not open source.
+The Brewin language and starter framework were created by  [Carey Nachenberg](http://careynachenberg.weebly.com/) with support from his TAs. 
 
-This will run all the `tests` and `fails` tests in directory `v<project number>` against your interpreter.
-
-You are free to write additional tests and add them to the corresponding directory, the local autograder will automatically test your code against any additional tests you write.
-
-## Licensing and Attribution
-
-This is an unlicensed repository; even though the source code is public, it is **not** governed by an open-source license.
-
-This code was primarily written by [Carey Nachenberg](http://careynachenberg.weebly.com/) with support from his TAs.
+I keep separated, private repositories for coursework: this repository will have virtually no commit history, despite consistent individual contributions over a 10-week period. It was submitted for a letter grade and passed all plagiarism and LLM checks. 
 
